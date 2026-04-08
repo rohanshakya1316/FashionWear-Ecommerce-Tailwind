@@ -1,11 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FashionWear</title>
-</head>
-<body>
-    
-</body>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1 class="text-red-600">Hello I am learning the Tailwind CSS.</h1>
+    <p class="text-orange-500 bg-green-100">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, culpa odit!
+      Delectus culpa optio possimus dolore natus! Fuga, asperiores aperiam.
+    </p>
+
+    <p
+      class="text-white bg-gradient-to-r from-red-500 via-yellow-400 to-green-600"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dolorum.
+    </p>
+
+    <p class="text-green-400 text-sm">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad architecto
+      fugit enim voluptatum suscipit dolore ratione debitis eos, deserunt esse
+      facilis, expedita illo sed rem ipsa, commodi laudantium voluptate
+      voluptates dignissimos alias. Quae unde nam id alias, quia dolor soluta
+      maiores nihil facere sint! Mollitia perferendis consequatur quo provident
+      dolore!
+    </p>
+    <h2
+      class="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-green-700 from-[10%] to-[20%]"
+    >
+      Hello Tailwind
+    </h2>
+    <p
+      class="text-lg text-green font-semibold text-justify decoration-wavy leading-10 tracking-tighter"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam architecto
+      laborum quos tempora praesentium nobis temporibus tempore deleniti
+      expedita sint?
+    </p>
+
+    <!-- Box Model -->
+    <div
+      class="bg-red-600 mx-4 py-5 h-[9rem] w-[9rem] border-8 border-green-700 border-solid rounded-3xl"
+    >
+      Box
+    </div>
+
+    <div class="flex flex-col items-center justify-center gap-10">
+      <p class="h-20 w-20 bg-red-600">Child A</p>
+      <p class="h-10 w-10 bg-green-600">Child B</p>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- responsive design md: sm: lg: xl: -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5">
+      <div class="h-20 bg-red-600">Child A</div>
+      <div class="h-20 bg-green-600">Child B</div>
+      <div class="h-20 bg-blue-600">Child B</div>
+      <div class="h-20 bg-cyan-600">Child B</div>
+      <div class="h-20 bg-indigo-600">Child B</div>
+      <div class="h-20 bg-teal-200">Child B</div>
+      <div class="h-20 bg-yellow-600">Child B</div>
+      <div class="h-20 bg-pink-600">Child B</div>
+    </div>
+  </body>
 </html>
