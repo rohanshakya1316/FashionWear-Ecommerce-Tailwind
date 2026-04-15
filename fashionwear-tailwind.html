@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" class="text-[62.5%] text-dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionWear</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              accent: "#13c1fe",
+              background: "#faf9f9",
+              primary: "#fe5013",
+              "primary-dark": "#fc4201",
+              secondary: "#fe8a61",
+              dark: "#1a1a1a",
+              light: "#4c4d4f",
+            },
+            fontFamily: {
+              sans: ["Urbanist", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+      }
+
+      [popover] {
+        position-area: bottom;
+        margin: initial;
+      }
+    </style>
+  </head>
+  <body class="bg-background font-sans">
+    <div class="bg-secondary text-dark text-center text-xl px-3 py-2">
+      Flash sale upto 20% off.
+    </div>
+
+    <header class="py-2 shadow-lg bg-white sticky top-0 z-999">
+      <div class="container mx-auto px-8 max-w-[120rem]">
+        <div class="flex gap-4 items-center justify-between m-2">
+          <div class="flex items-center gap-2">
+            <a href="#"
+              ><img
+                src="assets/images/logo.jpg"
+                alt="FashionWear Logo"
+                class="h-12"
+            /></a>
+            <h1
+              class="text-2xl bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text mt-1"
+            >
+              FashionWear
+            </h1>
+          </div>
+          <nav class="hidden md:flex md:gap-2">
+            <a
+              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              href="#hero"
+              >Home</a
+            >
+            <a
+              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              href="#benefits"
+              >About Us</a
+            >
+            <a
+              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              href="#featured"
+              >Featured</a
+            >
+            <a
+              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              href="#best-seller"
+              >Offers</a
+            >
+            <a
+              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              href="#contact"
+              >Contact</a
+            >
+          </nav>
+          <button
+            class="cursor-pointer text-xl px-4 pt-1 pb-2 rounded-full bg-background h-auto"
+            popovertarget="cart"
+          >
+            🛒
+            <span class="bg-primary text-white px-2 py-0.5 text-xl rounded-lg"
+              >10</span
+            >
+          </button>
+
+          <div
+            id="cart"
+            popover="auto"
+            class="bg-background shadow rounded p-4 mt-2"
+          >
+            <ul class="text-5 list-none">
+              <li>Shoes</li>
+              <li>Jacket</li>
+              <li>Hoddie</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
