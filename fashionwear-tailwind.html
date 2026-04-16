@@ -56,7 +56,7 @@
       }
 
       .featured-content {
-        @apply bg-white pt-4 px-8 pb-6 text-[2rem];
+        @apply bg-white pt-4 px-8 pb-6 text-[2rem] dark:bg-gray-900;
       }
 
       .featured-price {
@@ -68,17 +68,17 @@
       }
 
       .featured-button:hover {
-        @apply text-primary;
+        @apply text-primary dark:bg-gray-800;
       }
 
-      .contact-form-input, 
+      .contact-form-input,
       .contact-form-textarea {
-        @apply w-full bg-white border border-[#fc42014d] rounded-[1.25rem] px-5 py-4 text-xl
+        @apply w-full bg-white border border-[#fc42014d] rounded-[1.25rem] px-5 py-4 text-xl;
       }
 
-      .contact-form-input:focus, 
+      .contact-form-input:focus,
       .contact-form-textarea:focus {
-        @apply outline-primary outline-2
+        @apply outline-primary outline-2;
       }
 
       [popover] {
@@ -87,12 +87,13 @@
       }
     </style>
   </head>
-  <body class="bg-white font-sans">
+
+  <body class="bg-white font-sans dark:bg-gray-800">
     <div class="bg-secondary text-dark text-center text-xl px-3 py-2">
       Flash sale upto 20% off.
     </div>
 
-    <header class="py-2 shadow-lg bg-white sticky top-0 z-999">
+    <header class="py-2 shadow-lg bg-white sticky top-0 z-999 dark:bg-gray-800">
       <div class="container mx-auto px-8 max-w-[120rem]">
         <div class="flex gap-4 items-center justify-between m-2">
           <div class="flex items-center gap-2">
@@ -110,42 +111,56 @@
           </div>
           <nav class="hidden md:flex md:gap-2">
             <a
-              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              class="text-xl dark:text-gray-200 text-dark px-2 py-1 hover:text-primary"
               href="#hero"
               >Home</a
             >
             <a
-              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              class="text-xl text-dark px-2 py-1 hover:text-primary dark:text-gray-200"
               href="#benefits"
               >About Us</a
             >
             <a
-              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              class="text-xl text-dark px-2 py-1 hover:text-primary dark:text-gray-200"
               href="#featured"
               >Featured</a
             >
             <a
-              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              class="text-xl text-dark px-2 py-1 hover:text-primary dark:text-gray-200"
               href="#best-seller"
               >Offers</a
             >
             <a
-              class="text-xl text-dark px-2 py-1 hover:text-primary"
+              class="text-xl text-dark px-2 py-1 hover:text-primary dark:text-gray-200"
               href="#contact"
               >Contact</a
             >
           </nav>
-          <button
-            class="cursor-pointer text-xl px-4 pt-1 pb-2 rounded-full bg-background h-auto"
-            popovertarget="cart"
-          >
-            🛒
-            <span
-              class="bg-primary text-white mx-1 px-2 py-0.5 text-xl rounded-2xl"
-              >10</span
+          <div class="flex items-center gap-4">
+            <button
+              id="lightThemeSwitcher"
+              class="hidden dark:block px-2 py-1.5 rounded-full bg-gray-100 dark:bg-gray-700"
             >
-          </button>
+              🌞
+            </button>
+            <button
+              id="darkThemeSwitcher"
+              class="dark:hidden px-2 py-1.5 rounded-full bg-gray-100 dark:bg-gray-700"
+            >
+              🌙
+            </button>
 
+            <button
+              class="cursor-pointer text-xl px-4 pt-1 pb-2 rounded-full bg-background h-auto dark:bg-gray-700"
+              popovertarget="cart"
+            >
+              🛒
+              <span
+                class="bg-primary text-white mx-1 px-2 py-0.5 text-xl rounded-2xl"
+                >10</span
+              >
+            </button>
+          </div>
           <div
             id="cart"
             popover="auto"
@@ -162,7 +177,7 @@
     </header>
 
     <main>
-      <section id="hero" class="bg-background py-16">
+      <section id="hero" class="bg-background py-16 dark:bg-gray-900">
         <div class="container mx-auto px-8 max-w-[120rem]">
           <div
             class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 md:items-center lg:gap-[6rem]"
@@ -178,11 +193,11 @@
                 >New Collection with Bumper Offers!</span
               >
               <h1
-                class="text-5xl leading-normal mt-4 md:text-[3rem] lg:text-[5rem]"
+                class="text-5xl leading-normal mt-4 md:text-[3rem] lg:text-[5rem] dark:text-white"
               >
                 Explore the Beauty of Clothing
               </h1>
-              <p class="text-2xl text-light py-6">
+              <p class="text-2xl text-light py-6 dark:text-gray-400">
                 Discover top-quality products curated for your lifestyle. Enjoy
                 secure, fast shipping on all orders.
               </p>
@@ -192,7 +207,7 @@
                 Shop Now
               </button>
               <button
-                class="bg-background border-2 border-primary rounded-3xl py-5 px-10 mx-6 text-primary text-xl font-bold transition duration-300 ease hover:bg-primary hover:text-white"
+                class="bg-transparent border-2 border-primary rounded-3xl py-5 px-10 mx-6 text-primary text-xl font-bold transition duration-300 ease hover:bg-primary hover:text-white"
               >
                 Explore
               </button>
@@ -201,46 +216,51 @@
         </div>
       </section>
 
-      <section id="benefits" class="bg-[rgb(238,238,238)] py-16">
+      <section
+        id="benefits"
+        class="bg-[rgb(238,238,238)] py-16 dark:bg-gray-800"
+      >
         <div class="container mx-auto px-8 max-w-[120rem]">
-          <h2 class="text-center text-[4rem] mb-10">Why Choose Us</h2>
+          <h2 class="text-center text-[4rem] mb-10 dark:text-white">
+            Why Choose Us
+          </h2>
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
             <div
-              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] dark:bg-gray-700 rounded-3xl"
             >
-              <i class="icons fa-solid fa-globe text-[3.5rem]"></i>
-              <h4>Worldwide Shipping</h4>
-              <p class="text-light text-2xl text-center">
+              <i class="icons fa-solid fa-globe text-[3.5rem] dark:text-white"></i>
+              <h4 class="dark:text-gray-200">Worldwide Shipping</h4>
+              <p class="text-light text-2xl text-center dark:text-gray-400">
                 On all orders over Rs.1000, faster delivery.
               </p>
             </div>
 
             <div
-              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] dark:bg-gray-700 rounded-3xl"
             >
-              <i class="fa-solid fa-repeat text-[3.5rem]"></i>
-              <h4>7-Days Returns</h4>
-              <p class="text-light text-2xl text-center">
+              <i class="fa-solid fa-repeat text-[3.5rem] dark:text-white"></i>
+              <h4 class="dark:text-gray-200">7-Days Returns</h4>
+              <p class="text-light text-2xl text-center dark:text-gray-400">
                 Hassle free exchange and returns.
               </p>
             </div>
 
             <div
-              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] dark:bg-gray-700 rounded-3xl"
             >
-              <i class="fa-solid fa-wifi text-[3.5rem]"></i>
-              <h4>24/7 Support</h4>
-              <p class="text-light text-2xl text-center">
+              <i class="fa-solid fa-wifi text-[3.5rem] dark:text-white"></i>
+              <h4 class="dark:text-gray-200">24/7 Support</h4>
+              <p class="text-light text-2xl text-center dark:text-gray-400">
                 Always availabel for your assistance.
               </p>
             </div>
 
             <div
-              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] dark:bg-gray-700 rounded-3xl"
             >
-              <i class="fa-solid fa-credit-card text-[3.5rem]"></i>
-              <h4>Secure Payment</h4>
-              <p class="text-light text-2xl text-center">
+              <i class="fa-solid fa-credit-card text-[3.5rem] dark:text-white"></i>
+              <h4 class="dark:text-gray-200">Secure Payment</h4>
+              <p class="text-light text-2xl text-center dark:text-gray-400">
                 Safe payment gateways, online and card.
               </p>
             </div>
@@ -248,7 +268,10 @@
         </div>
       </section>
 
-      <section id="call-to-action" class="bg-[rgb(238,238,238)] py-16">
+      <section
+        id="call-to-action"
+        class="bg-[rgb(238,238,238)] py-16 dark:bg-gray-800"
+      >
         <div class="container mx-auto px-8 max-w-[120rem]">
           <div
             class="bg-gradient-to-r from-primary to-primary-dark p-12 rounded-[2.5rem] text-4xl flex items-center flex-col text-white gap-6"
@@ -266,15 +289,15 @@
             </button>
             <dialog id="signupForm" class="bg-transparent">
               <div
-                class="flex flex-col items-center bg-background rounded-3xl h-max justify-center relative left-0 py-8 px-12 fixed top-[45%] w-[100%] max-w-[max-content]"
+                class="flex flex-col items-center bg-background rounded-3xl h-max justify-center relative left-0 py-8 px-12 fixed top-[45%] w-[100%] max-w-[max-content] dark:bg-gray-700"
               >
                 <button
-                  class="absolute top-5 right-5 bg-background hover:text-primary"
+                  class="absolute top-5 right-5 bg-transparent hover:text-primary dark:text-white"
                   onclick="signupForm.close()"
                 >
                   X
                 </button>
-                <h2>Subscribe Us</h2>
+                <h2 class="dark:text-white">Subscribe Us</h2>
 
                 <form action="#" class="mt-6">
                   <input
@@ -282,7 +305,7 @@
                     name="email"
                     required
                     placeholder="Email address"
-                    class="w-auto text-md bg-white border-1 border-[rgba(252,66,1,0.2)] rounded-xl py-2 px-4"
+                    class="w-full text-md bg-white border-1 border-[rgba(252,66,1,0.2)] rounded-xl py-2 px-4"
                   />
                   <button
                     class="w-full text-md bg-primary border-1 border-[rgba(252,66,1,0.2)] rounded-xl py-2 px-4 text-white mt-4 hover:bg-primary-dark hover:text-white"
@@ -296,9 +319,11 @@
         </div>
       </section>
 
-      <section id="featured" class="py-16">
+      <section id="featured" class="py-16 dark:bg-gray-900">
         <div class="container mx-auto px-8 max-w-[120rem]">
-          <h2 class="text-center mb-14 text-[4rem]">Featured Products</h2>
+          <h2 class="text-center mb-14 text-[4rem] dark:text-white">
+            Featured Products
+          </h2>
           <div class="featured-box">
             <div class="featured-card">
               <img
@@ -307,7 +332,7 @@
                 alt="Hoddie"
               />
               <div class="featured-content">
-                <h4>Black Hoodie for Mens</h4>
+                <h4 class="dark:text-white">Black Hoodie for Mens</h4>
                 <p class="featured-price">Rs. 3500</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -319,7 +344,7 @@
                 alt="Pant"
               />
               <div class="featured-content">
-                <h4>Levis Pant for Mens</h4>
+                <h4 class="dark:text-white">Levis Pant for Mens</h4>
                 <p class="featured-price">Rs. 2500</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -331,7 +356,7 @@
                 alt="Suit"
               />
               <div class="featured-content">
-                <h4>Mens Suit</h4>
+                <h4 class="dark:text-white">Mens Suit</h4>
                 <p class="featured-price">Rs. 15000</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -343,7 +368,7 @@
                 alt="Jacket"
               />
               <div class="featured-content">
-                <h4>New Custom Jacket</h4>
+                <h4 class="dark:text-white">New Custom Jacket</h4>
                 <p class="featured-price">Rs. 4500</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -355,7 +380,7 @@
                 alt="Shirt"
               />
               <div class="featured-content">
-                <h4>Shirt for Mens</h4>
+                <h4 class="dark:text-white">Shirt for Mens</h4>
                 <p class="featured-price">Rs. 5500</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -367,7 +392,7 @@
                 alt="Sari"
               />
               <div class="featured-content">
-                <h4>Latest Red Saree</h4>
+                <h4 class="dark:text-white">Latest Red Saree</h4>
                 <p class="featured-price">Rs. 8000</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -379,7 +404,7 @@
                 alt="Half Pant"
               />
               <div class="featured-content">
-                <h4>Blue Half Pants</h4>
+                <h4 class="dark:text-white">Blue Half Pants</h4>
                 <p class="featured-price">Rs. 5000</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -391,7 +416,7 @@
                 alt="Shoes"
               />
               <div class="featured-content">
-                <h4>Nike Shoes</h4>
+                <h4 class="dark:text-white">Nike Shoes</h4>
                 <p class="featured-price">Rs. 7000</p>
                 <button class="featured-button">Add to Cart</button>
               </div>
@@ -400,10 +425,13 @@
         </div>
       </section>
 
-      <section id="best-seller" class="bg-[rgb(238,238,238)] py-16">
+      <section
+        id="best-seller"
+        class="bg-[rgb(238,238,238)] py-16 dark:bg-gray-800"
+      >
         <div class="container mx-auto px-8 max-w-[120rem]">
           <div
-            class="bg-[rgba(252,66,1,0.05)] p-12 rounded-[3rem] grid grid-cols-1 gap-10 items-center sm:grid-cols-2 md:px-20 md:gap-12"
+            class="bg-[rgba(252,66,1,0.05)] p-12 rounded-[3rem] grid grid-cols-1 gap-10 items-center sm:grid-cols-2 md:px-20 md:gap-12 dark:bg-primary-dark"
           >
             <img
               src="assets/images/limited-edition-jeans.jpg"
@@ -412,24 +440,32 @@
             />
             <div class="content">
               <h2
-                class="text-2xl sm:text-[2rem] md:text-[4rem] md:leading-[4.5rem]"
+                class="text-2xl sm:text-[2rem] md:text-[4rem] md:leading-[4.5rem] dark:text-white"
               >
                 Limited Edition Customized Jeans
               </h2>
-              <p class="py-4 text-light text-[1.25rem] md:text-[1.75rem]">
+              <p
+                class="py-4 text-light text-[1.25rem] md:text-[1.75rem] dark:text-white"
+              >
                 Experience the art of denim with our Limited Edition Customized
                 Jeans. Meticulously designed and individually customized, each
                 piece reflects craftsmanship, exclusivity, and modern elegance.
                 Own a pair that few will ever have.
               </p>
-              <p class="py-4 text-light text-[1.25rem] md:text-[1.75rem]">
+              <p
+                class="py-4 text-light text-[1.25rem] md:text-[1.75rem] dark:text-white"
+              >
                 Limited drops. Maximum style. Our Customized Jeans bring you
                 unique designs, premium comfort, and a fit that stands
                 out—because ordinary isn’t your thing.
               </p>
-              <h3 class="text-primary font-semibold text-[2rem]">Rs. 6999</h3>
+              <h3
+                class="text-primary font-semibold text-[2rem] dark:text-white"
+              >
+                Rs. 6999
+              </h3>
               <button
-                class="bg-primary rounded-3xl text-white text-xl py-4 px-12 mt-6 transition duration-300 ease-in-out hover:shadow-[2px_2px_10px_rgba(0,0,0,0.5)]"
+                class="bg-primary rounded-3xl text-white text-xl py-4 px-12 mt-6 transition duration-300 ease-in-out hover:shadow-[2px_2px_10px_rgba(0,0,0,0.5)] dark:bg-white dark:text-primary"
               >
                 Add to Cart
               </button>
@@ -438,7 +474,7 @@
         </div>
       </section>
 
-      <section id="contact" class="py-16">
+      <section id="contact" class="py-16 dark:bg-gray-900">
         <div class="container mx-auto px-8 max-w-[120rem]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28268.7770579726!2d85.25316431585996!3d27.667933485724568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1812d78377ef%3A0x8c37cded908543b!2sKirtipur%2044600!5e0!3m2!1sen!2snp!4v1775408877641!5m2!1sen!2snp"
@@ -450,47 +486,75 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
           <div class="grid grid-cols-1 gap-12 mt-20 md:grid-cols-2 md:gap-20">
-            <form action="#" autocomplete="off" class="flex flex-col gap-5 max-w-[50rem]">
-              <input class="contact-form-input"
+            <form
+              action="#"
+              autocomplete="off"
+              class="flex flex-col gap-5 max-w-[50rem]"
+            >
+              <input
+                class="contact-form-input"
                 type="text"
                 name="name"
                 id="name"
                 placeholder="Enter your name"
                 required
               />
-              <input class="contact-form-input"
+              <input
+                class="contact-form-input"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Enter your email"
                 required
               />
-              <input class="contact-form-input"
+              <input
+                class="contact-form-input"
                 type="tel"
                 name="phone"
                 id="phone"
                 placeholder="Enter your phone number"
                 required
               />
-              <textarea class="contact-form-textarea placeholder:font-sans"
+              <textarea
+                class="contact-form-textarea placeholder:font-sans"
                 name="comment"
                 id="comment"
                 rows="5"
                 placeholder="Enter your message"
               ></textarea>
-              <button type="submit" class="bg-primary rounded-[1.25rem] text-white px-8 py-4 mt-4 w-fit text-xl transition duration-300 ease-in-out hover:shadow-[2px_2px_10px_rgba(0,0,0,0.2)]">Send Message</button>
+              <button
+                type="submit"
+                class="bg-primary rounded-[1.25rem] text-white px-8 py-4 mt-4 w-fit text-xl transition duration-300 ease-in-out hover:shadow-[2px_2px_10px_rgba(0,0,0,0.2)]"
+              >
+                Send Message
+              </button>
             </form>
             <div class="info">
-              <h2 class="text-[2.5rem]">Let's Connect</h2>
-              <p class="text-light text-[1.25rem] my-6">Have any questions? Please reach out to us.</p>
-              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary"
+              <h2 class="text-[2.5rem] dark:text-white">Let's Connect</h2>
+              <p class="text-light text-[1.25rem] my-6 dark:text-gray-300">
+                Have any questions? Please reach out to us.
+              </p>
+              <a
+                class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary dark:text-white"
                 href="https://maps.app.goo.gl/XCVnE1goroE97sNM8"
                 target="_blank"
                 >📍 Kirtipur, Kathmandu, Nepal</a
               >
-              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary" href="mailto:example123@gmail.com">📨 example123@gmail.com</a>
-              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary" href="tel:+977-9876543210">📞 9876543210</a>
-              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary" href="https://wa.me/9876543210">💬 9876543210</a>
+              <a
+                class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary dark:text-white"
+                href="mailto:example123@gmail.com"
+                >📨 example123@gmail.com</a
+              >
+              <a
+                class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary dark:text-white"
+                href="tel:+977-9876543210"
+                >📞 9876543210</a
+              >
+              <a
+                class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary dark:text-white"
+                href="https://wa.me/9876543210"
+                >💬 9876543210</a
+              >
             </div>
           </div>
         </div>
@@ -500,5 +564,19 @@
     <footer class="bg-primary text-white text-2xl text-center p-4 mt-6">
       &copy; 2026. All rights reserved&trade;. Designed By Rohan Shakya
     </footer>
+
+    <script>
+      const darkThemeSwitcher = document.getElementById("darkThemeSwitcher");
+      const lightThemeSwitcher = document.getElementById("lightThemeSwitcher");
+      const html = document.querySelector("html");
+
+      darkThemeSwitcher.addEventListener("click", () => {
+        html.classList.add("dark");
+      });
+
+      lightThemeSwitcher.addEventListener("click", () => {
+        html.classList.remove("dark");
+      });
+    </script>
   </body>
 </html>
