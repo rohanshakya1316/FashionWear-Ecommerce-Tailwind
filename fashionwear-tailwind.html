@@ -8,7 +8,13 @@
       href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -31,10 +37,48 @@
         },
       };
     </script>
-    <style>
+    <style type="text/tailwindcss">
       body {
         font-synthesis: none;
         text-rendering: optimizeLegibility;
+      }
+
+      .featured-box {
+        @apply grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+      }
+
+      .featured-card {
+        @apply rounded-2xl overflow-hidden shadow-lg;
+      }
+
+      .featured-img {
+        @apply w-full h-60 object-cover;
+      }
+
+      .featured-content {
+        @apply bg-white pt-4 px-8 pb-6 text-[2rem];
+      }
+
+      .featured-price {
+        @apply my-2 text-[2.8rem] text-primary font-bold;
+      }
+
+      .featured-button {
+        @apply bg-[rgb(216,214,214)] px-6 py-4 w-full text-center rounded-2xl mt-4 text-[1.35rem] font-semibold transition duration-200 ease-in-out text-dark;
+      }
+
+      .featured-button:hover {
+        @apply text-primary;
+      }
+
+      .contact-form-input, 
+      .contact-form-textarea {
+        @apply w-full bg-white border border-[#fc42014d] rounded-[1.25rem] px-5 py-4 text-xl
+      }
+
+      .contact-form-input:focus, 
+      .contact-form-textarea:focus {
+        @apply outline-primary outline-2
       }
 
       [popover] {
@@ -43,7 +87,7 @@
       }
     </style>
   </head>
-  <body class="bg-background font-sans">
+  <body class="bg-white font-sans">
     <div class="bg-secondary text-dark text-center text-xl px-3 py-2">
       Flash sale upto 20% off.
     </div>
@@ -59,7 +103,7 @@
                 class="h-12"
             /></a>
             <h1
-              class="text-2xl bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text mt-1"
+              class="text-4xl bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text mt-1"
             >
               FashionWear
             </h1>
@@ -96,7 +140,8 @@
             popovertarget="cart"
           >
             🛒
-            <span class="bg-primary text-white px-2 py-0.5 text-xl rounded-lg"
+            <span
+              class="bg-primary text-white mx-1 px-2 py-0.5 text-xl rounded-2xl"
               >10</span
             >
           </button>
@@ -115,5 +160,345 @@
         </div>
       </div>
     </header>
+
+    <main>
+      <section id="hero" class="bg-background py-16">
+        <div class="container mx-auto px-8 max-w-[120rem]">
+          <div
+            class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 md:items-center lg:gap-[6rem]"
+          >
+            <img
+              src="assets/images/hero-section-image.jpg"
+              alt="Hero Section Image"
+              class="max-w-full w-auto h-full shadow-xl rounded-2xl"
+            />
+            <div class="hero-content">
+              <span
+                class="bg-accent/10 text-accent rounded-xl text-xl px-6 py-2"
+                >New Collection with Bumper Offers!</span
+              >
+              <h1
+                class="text-5xl leading-normal mt-4 md:text-[3rem] lg:text-[5rem]"
+              >
+                Explore the Beauty of Clothing
+              </h1>
+              <p class="text-2xl text-light py-6">
+                Discover top-quality products curated for your lifestyle. Enjoy
+                secure, fast shipping on all orders.
+              </p>
+              <button
+                class="bg-primary rounded-3xl text-white text-xl font-800 px-10 py-5 transition ease duration-300 hover:shadow-[2px_2px_10px_rgba(0,0,0,0.5)]"
+              >
+                Shop Now
+              </button>
+              <button
+                class="bg-background border-2 border-primary rounded-3xl py-5 px-10 mx-6 text-primary text-xl font-bold transition duration-300 ease hover:bg-primary hover:text-white"
+              >
+                Explore
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="bg-[rgb(238,238,238)] py-16">
+        <div class="container mx-auto px-8 max-w-[120rem]">
+          <h2 class="text-center text-[4rem] mb-10">Why Choose Us</h2>
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+            <div
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+            >
+              <i class="icons fa-solid fa-globe text-[3.5rem]"></i>
+              <h4>Worldwide Shipping</h4>
+              <p class="text-light text-2xl text-center">
+                On all orders over Rs.1000, faster delivery.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+            >
+              <i class="fa-solid fa-repeat text-[3.5rem]"></i>
+              <h4>7-Days Returns</h4>
+              <p class="text-light text-2xl text-center">
+                Hassle free exchange and returns.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+            >
+              <i class="fa-solid fa-wifi text-[3.5rem]"></i>
+              <h4>24/7 Support</h4>
+              <p class="text-light text-2xl text-center">
+                Always availabel for your assistance.
+              </p>
+            </div>
+
+            <div
+              class="flex flex-col items-center gap-4 p-8 text-2xl bg-[rgb(231,223,223)] rounded-3xl"
+            >
+              <i class="fa-solid fa-credit-card text-[3.5rem]"></i>
+              <h4>Secure Payment</h4>
+              <p class="text-light text-2xl text-center">
+                Safe payment gateways, online and card.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="call-to-action" class="bg-[rgb(238,238,238)] py-16">
+        <div class="container mx-auto px-8 max-w-[120rem]">
+          <div
+            class="bg-gradient-to-r from-primary to-primary-dark p-12 rounded-[2.5rem] text-4xl flex items-center flex-col text-white gap-6"
+          >
+            <h2>Join Fashion Wear</h2>
+            <p class="text-center text-2xl">
+              Refresh Your Wardrobe. Shop New Arrivals. Get 10% Off Your First
+              Order.
+            </p>
+            <button
+              onclick="signupForm.showModal()"
+              class="bg-white text-[1.25rem] text-black py-2 px-8 rounded-3xl hover:text-primary"
+            >
+              Sign Up for 10 % Off
+            </button>
+            <dialog id="signupForm" class="bg-transparent">
+              <div
+                class="flex flex-col items-center bg-background rounded-3xl h-max justify-center relative left-0 py-8 px-12 fixed top-[45%] w-[100%] max-w-[max-content]"
+              >
+                <button
+                  class="absolute top-5 right-5 bg-background hover:text-primary"
+                  onclick="signupForm.close()"
+                >
+                  X
+                </button>
+                <h2>Subscribe Us</h2>
+
+                <form action="#" class="mt-6">
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Email address"
+                    class="w-auto text-md bg-white border-1 border-[rgba(252,66,1,0.2)] rounded-xl py-2 px-4"
+                  />
+                  <button
+                    class="w-full text-md bg-primary border-1 border-[rgba(252,66,1,0.2)] rounded-xl py-2 px-4 text-white mt-4 hover:bg-primary-dark hover:text-white"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </dialog>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured" class="py-16">
+        <div class="container mx-auto px-8 max-w-[120rem]">
+          <h2 class="text-center mb-14 text-[4rem]">Featured Products</h2>
+          <div class="featured-box">
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/hoddie.jpg"
+                alt="Hoddie"
+              />
+              <div class="featured-content">
+                <h4>Black Hoodie for Mens</h4>
+                <p class="featured-price">Rs. 3500</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/pant.jpg"
+                alt="Pant"
+              />
+              <div class="featured-content">
+                <h4>Levis Pant for Mens</h4>
+                <p class="featured-price">Rs. 2500</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/suit.jpg"
+                alt="Suit"
+              />
+              <div class="featured-content">
+                <h4>Mens Suit</h4>
+                <p class="featured-price">Rs. 15000</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/jacket.jpg"
+                alt="Jacket"
+              />
+              <div class="featured-content">
+                <h4>New Custom Jacket</h4>
+                <p class="featured-price">Rs. 4500</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/shirt.jpg"
+                alt="Shirt"
+              />
+              <div class="featured-content">
+                <h4>Shirt for Mens</h4>
+                <p class="featured-price">Rs. 5500</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/sari.jpg"
+                alt="Sari"
+              />
+              <div class="featured-content">
+                <h4>Latest Red Saree</h4>
+                <p class="featured-price">Rs. 8000</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/half-pant.jpg"
+                alt="Half Pant"
+              />
+              <div class="featured-content">
+                <h4>Blue Half Pants</h4>
+                <p class="featured-price">Rs. 5000</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+            <div class="featured-card">
+              <img
+                class="featured-img"
+                src="assets/images/shoes.jpg"
+                alt="Shoes"
+              />
+              <div class="featured-content">
+                <h4>Nike Shoes</h4>
+                <p class="featured-price">Rs. 7000</p>
+                <button class="featured-button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="best-seller" class="bg-[rgb(238,238,238)] py-16">
+        <div class="container mx-auto px-8 max-w-[120rem]">
+          <div
+            class="bg-[rgba(252,66,1,0.05)] p-12 rounded-[3rem] grid grid-cols-1 gap-10 items-center sm:grid-cols-2 md:px-20 md:gap-12"
+          >
+            <img
+              src="assets/images/limited-edition-jeans.jpg"
+              alt="Limited Edition Jeans"
+              class="max-w-full h-full rounded-3xl object-cover"
+            />
+            <div class="content">
+              <h2
+                class="text-2xl sm:text-[2rem] md:text-[4rem] md:leading-[4.5rem]"
+              >
+                Limited Edition Customized Jeans
+              </h2>
+              <p class="py-4 text-light text-[1.25rem] md:text-[1.75rem]">
+                Experience the art of denim with our Limited Edition Customized
+                Jeans. Meticulously designed and individually customized, each
+                piece reflects craftsmanship, exclusivity, and modern elegance.
+                Own a pair that few will ever have.
+              </p>
+              <p class="py-4 text-light text-[1.25rem] md:text-[1.75rem]">
+                Limited drops. Maximum style. Our Customized Jeans bring you
+                unique designs, premium comfort, and a fit that stands
+                out—because ordinary isn’t your thing.
+              </p>
+              <h3 class="text-primary font-semibold text-[2rem]">Rs. 6999</h3>
+              <button
+                class="bg-primary rounded-3xl text-white text-xl py-4 px-12 mt-6 transition duration-300 ease-in-out hover:shadow-[2px_2px_10px_rgba(0,0,0,0.5)]"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-16">
+        <div class="container mx-auto px-8 max-w-[120rem]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28268.7770579726!2d85.25316431585996!3d27.667933485724568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1812d78377ef%3A0x8c37cded908543b!2sKirtipur%2044600!5e0!3m2!1sen!2snp!4v1775408877641!5m2!1sen!2snp"
+            width="100%"
+            height="450"
+            style="border: 0; border-radius: 2rem"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="grid grid-cols-1 gap-12 mt-20 md:grid-cols-2 md:gap-20">
+            <form action="#" autocomplete="off" class="flex flex-col gap-5 max-w-[50rem]">
+              <input class="contact-form-input"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+              <input class="contact-form-input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+              <input class="contact-form-input"
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+              <textarea class="contact-form-textarea placeholder:font-sans"
+                name="comment"
+                id="comment"
+                rows="5"
+                placeholder="Enter your message"
+              ></textarea>
+              <button type="submit" class="bg-primary rounded-[1.25rem] text-white px-8 py-4 mt-4 w-fit text-xl transition duration-300 ease-in-out hover:shadow-[2px_2px_10px_rgba(0,0,0,0.2)]">Send Message</button>
+            </form>
+            <div class="info">
+              <h2 class="text-[2.5rem]">Let's Connect</h2>
+              <p class="text-light text-[1.25rem] my-6">Have any questions? Please reach out to us.</p>
+              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary"
+                href="https://maps.app.goo.gl/XCVnE1goroE97sNM8"
+                target="_blank"
+                >📍 Kirtipur, Kathmandu, Nepal</a
+              >
+              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary" href="mailto:example123@gmail.com">📨 example123@gmail.com</a>
+              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary" href="tel:+977-9876543210">📞 9876543210</a>
+              <a class="font-normal m-2 text-[1.25rem] block text-dark hover:text-primary" href="https://wa.me/9876543210">💬 9876543210</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary text-white text-2xl text-center p-4 mt-6">
+      &copy; 2026. All rights reserved&trade;. Designed By Rohan Shakya
+    </footer>
   </body>
 </html>
